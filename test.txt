@@ -1,0 +1,21 @@
+test_list_int (test.Test01_ADD_CONTACT.test_list_int)
+*** Test01 *** FUNCTION CALL: add_contact('Buzz','Lightyear') THEN cur.execute('''SELECT * FROM contacts''') THEN tmp = cur.fetchall() *** EXPECT: tmp = [(1, 'Buzz', 'Lightyear')] *** ... 
+ok
+test_list_int (test.Test02_MODIFY_CONTACT.test_list_int)
+*** Test02 *** FUNCTION CALL: add_contact('Buzz','Lightyear') THEN modify_contact(1, 'Mickey','Mouse') THEN cur.execute('''SELECT * FROM contacts''') THEN tmp = cur.fetchall() *** EXPECT: tmp = [(1, 'Mickey', 'Mouse')] *** ... 
+ok
+test_list_int (test.Test03_ADD_PHONE.test_list_int)
+*** Test03 *** FUNCTION CALL: add_phone(99,'Cell','(714)555-1212') THEN cur.execute('''SELECT * FROM phones''') THEN tmp = cur.fetchall() *** EXPECT: tmp = [(1, 99, 'Cell', '(714)555-1212')] *** ... 
+ok
+test_list_int (test.Test04_MODIFY_PHONE.test_list_int)
+*** Test04 *** FUNCTION CALL: add_phone(99,'Cell','(714)555-1212') THEN modify_phone(1, 'Home','(562)666-8855') THEN cur.execute('''SELECT * FROM contacts''') THEN tmp = cur.fetchall() *** EXPECT: tmp = [(1, 99, 'Home', '(562)666-8855')] *** ... 
+ok
+test_list_int (test.Test05_GET_CONTACT_PHONE_LIST.test_list_int)
+*** Test05 *** FUNCTION CALL: add_contact('Buzz','Lightyear') THEN add_phone(1,'Cell','(714)555-1212') THEN add_phone(1,'Home','(562)666-8855') THEN tmp = get_contact_phone_list() *** EXPECT: tmp = [(1, 'Buzz', 'Lightyear', 1, 1, 'Cell', '(714)555-1212'),(1, 'Buzz', 'Lightyear', 2, 1, 'Home', '(562)666-8855')] *** ... 
+ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.054s
+
+OK
+
